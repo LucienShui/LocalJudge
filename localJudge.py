@@ -28,7 +28,6 @@ elif system == 'Windows':
         quit(0)
 print('System:' + system + ' Compiler:' + compiler)
 
-compiler = 'g++-7'  # 编译器名
 sourceFile = 'main.cpp'  # 源文件名
 vis = []  # 被访问过的文件列表
 cntAll = cntWa = 0
