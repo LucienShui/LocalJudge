@@ -22,16 +22,16 @@ dir
 在运行python程序前请确保编译参数（编译器名称）和源文件名正确。
 
 ```bash
-gcc main.c -o a # 编译C语言
-g++ main.cpp -o a # 编译C++
+gcc main.c -o a  # 编译C语言
+g++ main.cpp -o a  # 编译C++
 ```
 
 测试用例请保持对应的输入输出的文件名完全一致，且不包含'.'和'\'，例如：
 ```bash
-test1.in test1.out # 合法，除后缀外完全一致且不包含'.'和'\'
-test1.in test.out # 不合法，文件名不一致
-test.1.in test.1.out # 不合法，包含'.'
-test\1.in test\1.out # 不合法，包含'\'
+test1.in test1.out  # 合法，除后缀外完全一致且不包含'.'和'\'
+test1.in test.out  # 不合法，文件名不一致
+test.1.in test.1.out  # 不合法，包含'.'
+test\1.in test\1.out  # 不合法，包含'\'
 ```
 
 # 原理
