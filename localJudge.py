@@ -1,7 +1,34 @@
 #!/bin/python3
+# coding=utf-8
 import os
+import platform
 
-compiler = 'g++'  # 编译器名
+system = platform.system()
+
+compiler = 'g++'
+if system == 'Darwin':
+    for i in range(5, 9):
+        if os.path.isfile('/usr/local/bin/' + compiler + '-' + str(i)):
+            compiler = 'g++' + '-' + str(i)
+            break
+    if compiler == 'g++' and not os.path.isfile('/usr/local/bin/' + compiler):
+        print('Please run\nbrew install gcc\nto install compiler')
+        quit(0)
+
+elif system == 'Linux':
+    if not os.path.isfile('/usr/bin/' + compiler):
+        print('please install gcc before using it')
+        quit(0)
+
+elif system == 'Windows':
+    print('Please input your compiler dir like: C:\\gcc\\bin\\g++.exe')
+    compiler = input()
+    if not os.path.isfile(compiler):
+        print('Invalid compiler')
+        quit(0)
+print('System:' + system + ' Compiler:' + compiler)
+
+compiler = 'g++-7'  # 编译器名
 sourceFile = 'main.cpp'  # 源文件名
 vis = []  # 被访问过的文件列表
 cntAll = cntWa = 0
