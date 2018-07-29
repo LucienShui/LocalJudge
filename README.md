@@ -4,12 +4,14 @@
 
 # 文件结构
 
+```
 dir
  ├─ localJudge.py
  ├─ main.cpp
  └─ testCase
      ├─ *.in
      └─ *.out
+```
      
 # 使用方法
 
