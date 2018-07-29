@@ -1,7 +1,7 @@
 #!/bin/python3
 import os
 
-compiler = 'g++-7'  # 编译器名
+compiler = 'g++'  # 编译器名
 sourceFile = 'main.cpp'  # 源文件名
 vis = []  # 被访问过的文件列表
 cntAll = cntWa = 0
