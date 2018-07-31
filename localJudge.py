@@ -29,5 +29,5 @@ if __name__ == '__main__':
     if cntWa != 0:
         print('%d/%d Passed' % (cntAll - cntWa, cntAll))
     else:
-        print('Accept')
+        print('All correct')
     os.system('rm a')  # 删除可执行文件
