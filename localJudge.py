@@ -27,7 +27,7 @@ if __name__ == '__main__':
                 print('-----------\n%s:\nExpect:\n%sUser output:\n%s' % (testCaseName, stdOut, userOut))
 
     if cntWa != 0:
-        print('Wrong Answer %d/%d' % (cntAll - cntWa, cntAll))
+        print('%d/%d Passed' % (cntAll - cntWa, cntAll))
     else:
         print('Accept')
     os.system('rm a')  # 删除可执行文件
