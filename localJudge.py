@@ -64,4 +64,5 @@ if __name__ == '__main__':
     else:
         print('All correct')
     os.system('rm a')  # 删除可执行文件
+    os.system('rm -rf userOutput')  # 删除输出文件
 
