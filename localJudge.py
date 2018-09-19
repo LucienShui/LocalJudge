@@ -39,7 +39,14 @@ if __name__ == '__main__':
     for fileName in os.listdir('testCase'):  # 遍历每一组测试用例
         if fileName[0] == '.':  # 如果是隐藏文件则跳过
             continue
-        testCaseName = fileName.split('.')[0]  # 获取测试文件名，因能力问题，所以文件名中不得包含'.'和'\'
+        splitedName = fileName.split('.')
+        if splitedName[-1] != 'in' and splitedName[-1] != 'out':  # 不是测试用例则跳过
+            continue
+        testCaseName = ''
+        if splitedName[-1] == 'in':
+            testCaseName =  fileName[:-3] # 获取测试文件名，因能力问题，所以文件名中不得包含'\'
+        else:
+            testCaseName = fileName[:-4]
         if testCaseName not in vis:  # 如果这个测试用例没有用过
             cntAll += 1  # 测试用例总数量加一
             vis.append(testCaseName)  # 标记测试用例
@@ -57,3 +64,4 @@ if __name__ == '__main__':
     else:
         print('All correct')
     os.system('rm a')  # 删除可执行文件
+
